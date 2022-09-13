@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="./app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <title>mama_mo</title>
+</head>
+<body>
+
+    <audio id="audio">
+        <source src="./assets/sound.mp3" type="audio/mp3">
+    </audio>
+
+    <div id="load">
+        <div class="loader">
+            <hr/><hr/><hr/><hr/>
+        </div>
+    </div>
+    <content>
+        <main>
+                <h1>Jevonne!</h1>
+        
+            <section>
+                <link href="https://fonts.googleapis.com/css?family=Wendy+One" rel="stylesheet" type="text/css">
+                <div class="balloon">
+                    <div><span>ඞ</span>
+                    </div>
+                    <div><span>B</span>
+                    </div>
+                    <div><span>D</span>
+                    </div>
+                    <div><span>A</span>
+                    </div>
+                    <div><span>Y</span>
+                    </div>
+                    <div><span>!</span>
+                    </div>
+                </div>
+            </section>
+            
+            <section>
+
+                <a onclick="togglePlay()" type="button" class="frame">
+                    <img src="./assets/von.png" alt="von">
+                </a>
+
+                <div id="square">
+                    <img class="conf" src="./assets/confetti.png" alt="confetti">
+
+                    <div>
+                        <div class="pibir">
+                            <h2>Happy birthday!!!</h2>
+                            <p>Happy birthday Vonne!! We dont talk much but every time we hang out, you always make me laugh. There was a time in vc wherein you were painting and we were playing brawlhalla, I got a glimpse of what you were doing and BAKSBSKSN IT WAS PRETTY TT anyway I hope you enjoy your birthday and heres to more interactions and memories with you🥂</p>
+                            <p>-Kirsten ^^</p>
+                            <p>Sup bitch its me ur bitch, so uhh happy birthday I once again lied hHAHAHASHSHAAHSAHAH I DID HAVE SOMETHING PLANNED AND IM WRITING THIS SHORT LETTER WHILE WE'RE CALLING 10:00PM YESTERDAY SIDAUPHAIUPSDF SO YEAH ENJOY THIS VID FROM EVERYONE THAT MANAGED TO GIVE THEIR VID, Credits to Aeya though hard carry si champ. Anyways, enjoy your day sorry for lying :D AND KAT WILL GIVE U A PAINTING DAW ATA IDK PLS CHAT HER ABOUT IT YOU SHY BEAN SIPHFAIUSPDHF.</p>
+                            <p>- Ljiel your labs</p>
+                            
+                        </div>
+
+                        <div id="vid">
+                            <iframe src="https://www.youtube.com/embed/7s7VTdKh5bQ" height="486" width="1159" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <img src="./assets/Balloon_Left_1.png" alt="" class="left L1">
+            <img src="./assets/Balloon_Left_2.png" alt="" class="left L2">
+            <img src="./assets/Balloon_Left_3.png" alt="" class="left L3">
+
+
+            <img src="./assets/Ballon_Right_1.png" alt="" class="right R1">
+            <img src="./assets/Ballon_Right_2.png" alt="" class="right R2">
+            <img src="./assets/Ballon_Right_3.png" alt="" class="right R3">
+
+        </main>
+
+        <footer>
+            <button><a href="#">Aeya</a></button>
+            <button><a href="#">Bas</a></button>
+            <button><a href="#">Christina</a></button>
+            <button><a href="#">Elvin</a></button>
+            <button><a href="#">Katrina</a></button>
+            <button><a href="#">Kiara</a></button>
+            <button><a href="#">Leighanna</a></button>
+            <button><a href="#">Liam</a></button>
+            <button><a href="#">Ljiel</a></button>
+            <button><a href="#">Malyka</a></button>
+            <button><a href="#">Mica</a></button>
+            <button><a href="#">Val</a></button>
+            <button><a href="#">Vans</a></button>
+            <button><a href="#">Manong Vogn</a></button>
+            <button><a href="#">Kuya Yj</a></button>
+        </footer>
+    </content>
+    <script>      
+
+        var audio = document.getElementById('audio');
+        var isPlaying = false
+
+        function togglePlay() {
+            if (isPlaying) {
+                audio.pause()
+            } else {
+                audio.play();
+            }
+        };
+        audio.onplaying = function() {
+            isPlaying = true;
+            };
+        audio.onpause = function() {
+            isPlaying = false;
+        };
+
+    window.addEventListener ("load", function () {
+
+        const loader = document.querySelector ('#load');
+        loader.className += (" hidden");
+
+    });
+
+        var vid = document.getElementById("audio");
+        vid.volume = .2;
+
+        if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage('resize', "*");
+        }
+
+        ScrollReveal({
+            reset: true,
+            distance:'60px',
+            duration: 2500,
+        });
+
+        ScrollReveal().reveal('.L1', { delay: 100, origin: 'bottom'});
+        ScrollReveal().reveal('.L2', { delay: 200, origin: 'bottom'});
+        ScrollReveal().reveal('.L3', { delay: 300, origin: 'bottom'});
+
+        ScrollReveal().reveal('.R1', { delay: 100, origin: 'bottom'});
+        ScrollReveal().reveal('.R2', { delay: 200, origin: 'bottom'});
+        ScrollReveal().reveal('.R3', { delay: 300, origin: 'bottom'});
+    </script>
+</body>
+</html>
