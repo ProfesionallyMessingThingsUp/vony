@@ -62,9 +62,7 @@
                             
                         </div>
 
-                        <div id="vid">
-                            <iframe src="https://www.youtube.com/embed/7s7VTdKh5bQ" height="486" width="1159" allowfullscreen></iframe>
-                        </div>
+                        <div id="player"></div>
                     </div>
                 </div>
 
@@ -82,21 +80,21 @@
         </main>
 
         <footer>
-            <button><a href="#">Aeya</a></button>
-            <button><a href="#">Bas</a></button>
-            <button><a href="#">Christina</a></button>
-            <button><a href="#">Elvin</a></button>
-            <button><a href="#">Katrina</a></button>
-            <button><a href="#">Kiara</a></button>
-            <button><a href="#">Leighanna</a></button>
-            <button><a href="#">Liam</a></button>
-            <button><a href="#">Ljiel</a></button>
-            <button><a href="#">Malyka</a></button>
-            <button><a href="#">Mica</a></button>
-            <button><a href="#">Val</a></button>
-            <button><a href="#">Vans</a></button>
-            <button><a href="#">Manong Vogn</a></button>
-            <button><a href="#">Kuya Yj</a></button>
+            <button id="g13">Aeya</button>
+            <button id="g2">Bas</button>
+            <button id="g3">Christina</button>
+            <button id="g1">Elvin</button>
+            <button>Katrina</button>
+            <button id="g4">Kiara</button>
+            <button id="g5">Leighanna</button>
+            <button id="g6">Liam</button>
+            <button>Ljiel</button>
+            <button id="g7">Malyka</button>
+            <button id="g8">Mica</button>
+            <button id="g12">Val</button>
+            <button id="g9">Vans</button>
+            <button id="g10">Manong Vogn</button>
+            <button id="g11">Kuya Yj</button>
         </footer>
     </content>
     <script>      
@@ -124,7 +122,6 @@
         loader.className += (" hidden");
 
     });
-
         var vid = document.getElementById("audio");
         vid.volume = .2;
 
@@ -145,6 +142,113 @@
         ScrollReveal().reveal('.R1', { delay: 100, origin: 'bottom'});
         ScrollReveal().reveal('.R2', { delay: 200, origin: 'bottom'});
         ScrollReveal().reveal('.R3', { delay: 300, origin: 'bottom'});
+
+        var tag = document.createElement('script');
+
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        var player;
+        function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            height: '390',
+            width: '640',
+            videoId: '7s7VTdKh5bQ',
+            playerVars: {
+            'playsinline': 1
+            },
+            events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+            }
+        });
+        }
+
+        function onPlayerReady(event) {
+        event.target.playVideo();
+        }
+
+
+        var done = false;
+        function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+            setTimeout(stopVideo, 6000);
+            done = true;
+        }
+        }
+        function stopVideo() {
+        player.stopVideo();
+        }
+
+
+        var sn1 = document.getElementById("g1");
+        sn1.addEventListener("click", function(){
+            player.seekTo(0, true);
+        });
+
+        var sn2 = document.getElementById("g2");
+        sn2.addEventListener("click", function(){
+            player.seekTo(38, true);
+        });
+        
+        var sn3 = document.getElementById("g3");
+        sn3.addEventListener("click", function(){
+            player.seekTo(54, true);
+        });
+
+        var sn4 = document.getElementById("g4");
+        sn4.addEventListener("click", function(){
+            player.seekTo(68, true);
+        });
+
+        var sn5 = document.getElementById("g5");
+        sn5.addEventListener("click", function(){
+            player.seekTo(96, true);
+        });
+
+        var sn6 = document.getElementById("g6");
+        sn6.addEventListener("click", function(){
+            player.seekTo(197, true);
+        });
+        
+        var sn7 = document.getElementById("g7");
+        sn7.addEventListener("click", function(){
+            player.seekTo(323, true);
+        });
+
+        var sn8 = document.getElementById("g8");
+        sn8.addEventListener("click", function(){
+            player.seekTo(422, true);
+        });
+
+        var sn9 = document.getElementById("g9");
+        sn9.addEventListener("click", function(){
+            player.seekTo(482, true);
+        });
+        
+        var sn10 = document.getElementById("g10");
+        sn10.addEventListener("click", function(){
+            player.seekTo(509, true);
+        });
+
+        var sn11 = document.getElementById("g11");
+        sn11.addEventListener("click", function(){
+            player.seekTo(561, true);
+        });
+
+        var sn12 = document.getElementById("g12");
+        sn12.addEventListener("click", function(){
+            player.seekTo(595, true);
+        });
+
+        var sn13 = document.getElementById("g13");
+        sn13.addEventListener("click", function(){
+            player.seekTo(624, true);
+        });
+
+        
+        
     </script>
 </body>
 </html>
